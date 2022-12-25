@@ -1,0 +1,8 @@
+##プロジェクト作成
+$ npx create-react-app react-atomic-design
+
+##React-Router-Domをインストール
+$ npm install react-router-dom
+
+##Styled Componentsをインストール
+$ npm install styled-components
