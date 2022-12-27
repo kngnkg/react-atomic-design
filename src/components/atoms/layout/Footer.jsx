@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Footer = () => {
+export const Footer = () => {   
     return <SFooter>&copy; 2021 test Inc.</SFooter>;
 };
 
