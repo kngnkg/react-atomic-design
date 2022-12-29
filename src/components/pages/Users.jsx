@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { HeaderOnly } from "../templates/HeaderOnly";
 import { SearchInput } from "../molecules/SearchInput";
 import { UserCard } from "../organisms/user/UserCard";
-import { useLocation } from "react-router-dom";
 
 // ダミーデータ10件生成
 const users = [...Array(10).keys()].map((val) => {
@@ -20,16 +19,13 @@ const users = [...Array(10).keys()].map((val) => {
 });
 
 export const Users = () => {
-    const { state } = useLocation();
-    const isAdmin = state ? state.isAdmin : false;
-    
     return (
         <HeaderOnly>
             <SContainer>
                 <h2>ユーザー一覧</h2>
                 <SearchInput/>
                 <SUserArea>
-                {users.map(user => <UserCard key={user.id} user={user} isAdmin={isAdmin} />)}
+                {users.map(user => <UserCard key={user.id} user={user} />)}
                 </SUserArea>
             </SContainer>
         </HeaderOnly>
