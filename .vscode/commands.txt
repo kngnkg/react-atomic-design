@@ -6,3 +6,6 @@ $ npm install react-router-dom
 
 ##Styled Componentsをインストール
 $ npm install styled-components
+
+##recoilをインストール
+$ npm install recoil
