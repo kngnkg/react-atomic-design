@@ -2,12 +2,17 @@ import styled from "styled-components";
 import { DefaultLayout } from "../templates/DefaultLayout";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../../providers/UserProvider";
+// import { useContext } from "react";
+// import { UserContext } from "../../providers/UserProvider";
+import { useSetRecoilState } from "recoil";
+import { userState } from "../../store/userState";
 
 export const Top = () => {
     const navigate = useNavigate();
-    const { setUserInfo } = useContext(UserContext);
+    // const { setUserInfo } = useContext(UserContext);
+
+    // useSetRecoilStateは不要な再レンダリングしない
+    const setUserInfo = useSetRecoilState(userState);
 
     const onClickAdmin = () => {
         setUserInfo({ isAdmin: true });
